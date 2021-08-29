@@ -1,0 +1,12 @@
+.container-content .entry{
+    align-items: stretch;
+    padding: 20px;
+}
+
+.container-content .entry .header-test{
+    margin-bottom: 10px;
+}
+
+.btn-submit, .btn-reset{
+    margin: 10px;
+}

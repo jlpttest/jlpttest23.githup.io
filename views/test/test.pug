@@ -1,0 +1,46 @@
+extends ../../layout/testlayout
+
+block  content
+    div(class="container container-content")
+        div(class="content entry")
+            div(class="header-test")
+                h2='Luyện thi JLPT ' + data[0].Description
+                p.lead='JLPT ' + data[0].TopicKindTitle + ' ' + data[0].TopicTitle
+                div(class="card", style="width: 11rem; height: 5rem;")
+                    div(class="card-body")
+                        h5(class="card-title result") Kết quả:
+            div(class="content-test")
+                button(type="button" class="btn btn-primary btn-reset") Reset
+                - var n = 0;
+                each val in data
+                    if val.JapaneseContent
+                        h5= '問題 '+ ++n + ': ' + val.JapaneseContent
+                        div(class="card my-4 " + "ques" + n)
+                            if val.UnderlineText
+                                h5(class="card-header")=val.UnderlineText
+                            div(class="card-body " + "ans" + n)
+                                div(class="form-check " + "ans" + n + "1")
+                                    input(type="radio", class="form-check-input", name="optradio" + n, id="check" + n + "1")
+                                    label(class="form-check-label " + "text" + n + "1")=val.AnswerJP1
+                                div(class="form-check " + "ans" + n + "2")
+                                    input(type="radio", class="form-check-input", name="optradio" + n, id="check" + n + "2")
+                                    label(class="form-check-label " + "text" + n + "2")=val.AnswerJP2
+                                div(class="form-check " + "ans" + n + "3")
+                                    input(type="radio", class="form-check-input", name="optradio" + n, id="check" + n + "3")
+                                    label(class="form-check-label " + "text" + n + "3")=val.AnswerJP3
+                                div(class="form-check " + "ans" + n + "4")
+                                    input(type="radio", class="form-check-input", name="optradio" + n, id="check" + n + "4")
+                                    label(class="form-check-label " + "text" + n + "4")=val.AnswerJP4
+                button(type="button" class="btn btn-primary btn-submit") Result
+                
+        div(class="menu-link")
+            table(class="table table-link")
+                thead
+                    tr
+                        th Menu
+                tbody
+                    - var n = 1;
+                    each val in dataTest
+                        tr
+                            th
+                                a(href="/category/jlptn" + levelID + "/"+ categoryId + '/test/' + n++)=val[0].TopicKindTitle + ' ' + val[0].TopicTitle 

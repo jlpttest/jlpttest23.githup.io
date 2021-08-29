@@ -1,0 +1,157 @@
+extends ../layout/commonlayout
+
+block  content
+  //- a(href='/user/create') New 
+  //- form(action="/user/search", method="GET") 
+  //-   input(type="text" name="q" value=qResult)
+  //-   button Search
+  //- ul
+  //-   each val in user
+  //-     li
+  //-       span=val.name
+  //-       span &nbsp;
+  //-       a(href='/user/' + val.id) View
+  div(class="container container-content")  
+    div(class="content entry")
+      h2(class="title") Welcome to JLPT Test
+      h2(class="level") JLPT N1
+      div(class="block-columns")
+        div(class="block-column")
+          a(href="/category/jlptn1/" + '3') 
+            figure(class="block-image") 
+              img(src="n1.png", alt="")
+              b Ngữ pháp 
+        div(class="block-column")
+          a(href="/category/jlptn1/" + '1') 
+            figure(class="block-image") 
+              img(src="n1.png", alt="")
+              b Hán tự
+        div(class="block-column")
+          a(href="/category/jlptn1/" + '2') 
+            figure(class="block-image") 
+              img(src="n1.png", alt="")
+              b Từ vựng
+      h2(class="level") JLPT N2
+      div(class="block-columns")
+        div(class="block-column")
+          a(href="/category/jlptn2/" + '3') 
+            figure(class="block-image") 
+              img(src="n2.png", alt="")
+              b Ngữ pháp 
+        div(class="block-column")
+          a(href="/category/jlptn2/" + '1') 
+            figure(class="block-image") 
+              img(src="n2.png", alt="")
+              b Hán tự
+        div(class="block-column")
+          a(href="/category/jlptn2/" + '2') 
+            figure(class="block-image") 
+              img(src="n2.png", alt="")
+              b Từ vựng
+      h2(class="level") JLPT N3
+      div(class="block-columns")
+        div(class="block-column")
+          a(href="/category/jlptn3/" + '3') 
+            figure(class="block-image") 
+              img(src="n3.png", alt="")
+              b Ngữ pháp 
+        div(class="block-column")
+          a(href="/category/jlptn3/" + '1') 
+            figure(class="block-image") 
+              img(src="n3.png", alt="")
+              b Hán tự
+        div(class="block-column")
+          a(href="/category/jlptn3/" + '2') 
+            figure(class="block-image") 
+              img(src="n3.png", alt="")
+              b Từ vựng
+      h2(class="level") JLPT N4
+      div(class="block-columns")
+        div(class="block-column")
+          a(href="/category/jlptn4/" + '3') 
+            figure(class="block-image") 
+              img(src="n4.png", alt="")
+              b Ngữ pháp 
+        div(class="block-column")
+          a(href="/category/jlptn4/" + '1') 
+            figure(class="block-image") 
+              img(src="n4.png", alt="")
+              b Hán tự
+        div(class="block-column")
+          a(href="/category/jlptn4/" + '2') 
+            figure(class="block-image") 
+              img(src="n4.png", alt="")
+              b Từ vựng
+      h2(class="level") JLPT N5
+      div(class="block-columns")
+        div(class="block-column")
+          a(href="/category/jlptn5/" + '3') 
+            figure(class="block-image") 
+              img(src="n5.png", alt="")
+              b Ngữ pháp 
+        div(class="block-column")
+          a(href="/category/jlptn5/" + '1') 
+            figure(class="block-image") 
+              img(src="n5.png", alt="")
+              b Hán tự
+        div(class="block-column")
+          a(href="/category/jlptn5/" + '2') 
+            figure(class="block-image") 
+              img(src="n5.png", alt="")
+              b Từ vựng
+    div(class="menu-link")
+      //- table(class="table table-link")
+        thead
+          tr
+            th Menu
+        tbody
+          tr
+            th 
+              a(href="/category/jlptn1/" + '3') JLPT N1 Ngữ pháp
+          tr
+            th 
+              a(href="/category/jlptn1/" + '1') JLPT N1 Hán tự
+          tr
+            th 
+              a(href="/category/jlptn1/" + '2') JLPT N1 Từ vựng
+          tr
+            th 
+              a(href="#") JLPT N2 Ngữ pháp
+          tr
+            th 
+              a(href="#") JLPT N2 Hán tự
+          tr
+            th 
+              a(href="#") JLPT N2 Từ vựng
+          tr
+            th 
+              a(href="#") JLPT N3 Ngữ pháp
+          tr
+            th 
+              a(href="#") JLPT N3 Hán tự
+          tr
+            th 
+              a(href="#") JLPT N3 Từ vựng
+          tr
+            th 
+              a(href="#") JLPT N4 Ngữ pháp
+          tr
+            th 
+              a(href="#") JLPT N4 Hán tự
+          tr
+            th 
+              a(href="#") JLPT N4 Từ vựng
+          tr
+            th 
+              a(href="#") JLPT N5 Ngữ pháp
+          tr
+            th 
+              a(href="#") JLPT N5 Hán tự
+          tr
+            th 
+              a(href="#") JLPT N5 Từ vựng
+      br
+      b Music
+      iframe(src="https://open.spotify.com/embed/playlist/2AhdrxSpw6KCgJVnJTDzTR", width="100%", height="100%", frameBorder="0")
+
+

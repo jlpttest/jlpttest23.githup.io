@@ -1,0 +1,163 @@
+html 
+    head 
+        title Blog
+        meta(charset='utf-8')
+        link(href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css", rel="stylesheet")
+        link(href="/common.css", rel="stylesheet")
+        link(href="/commontest.css", rel="stylesheet")
+        link(rel="icon", href="/favi.ico", type="image/gif", sizes="16x16")
+        script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js")
+        script.
+            $(document).ready(function() {
+                var contentTest = !{JSON.stringify(data)};
+                ////console.log(contentTest);
+                var changedRadio =[];
+                var changedQue = [];
+                $(".btn-submit").click(function(){
+                    var index;
+                    var numOFCrrectAns = 0;
+                    // fill color correct answer
+                    contentTest.forEach((element,count) => {
+                        var classRadio;
+                        var classText;
+                        var userAnswer;
+                        var ansCorrect = [];
+                        for(index = 1; index <= 4; index++){
+                            classRadio = "#check" + (count+1) + index;
+                            if($(classRadio).prop("checked")){
+                                changedRadio[count] = classRadio;
+                                classText = ".text" + (count+1) + index;
+                                userAnswer = $(classText).html();
+                                break;
+                            }
+                        }
+                        if(userAnswer != element.CorrectAnswer){
+                                $(classText).css("color","red");
+                                $(classText).css("font-weight","bold");
+                                changedQue.push(classText);
+                        }
+                        for (let index = 1; index <= 4; index++) {
+                            classText = ".text" + (count+1) + index;
+                            let tmpAns = $(classText).html();
+                            if(tmpAns === element.CorrectAnswer){
+                                break;
+                            }
+                        }
+                        $(classText).css("color", "green");
+                        $(classText).css("font-weight","bold");
+                        if(userAnswer != element.CorrectAnswer){
+                            changedQue.push(classText);
+                        }else{
+                            changedQue.push(classText);
+                            numOFCrrectAns = numOFCrrectAns + 1;
+                        }
+                    });
+                    $(window).scrollTop(0);
+                    if(changedRadio.length != 0){
+                        $(".result").text("Kết quả:");
+                        $(".result").append(numOFCrrectAns+"/"+contentTest.length);
+                        
+                    }
+                    //- $(".btn-reset").removeAttr("disabled");
+                    //- $(".btn-submit").attr("disabled", true);
+                }); 
+                  $(".btn-reset").click(function(){
+                    var index;
+                    // reset radio button and color
+                    if((changedQue.length == 0) && (changedRadio.length == 0)){
+                        contentTest.forEach((element,count) => {
+                            var classRadio;
+                            for(index = 1; index <= 4; index++){
+                                classRadio = "#check" + (count+1) + index;
+                                if($(classRadio).prop("checked")){
+                                    $(classRadio).prop("checked",false);
+                                    break;
+                                }
+                            }
+                        });
+                    }else{ 
+                        for (index = 0; index < changedQue.length; index++) {
+                            $(changedQue[index]).css("color", "black");
+                            $(changedQue[index]).css("font-weight","unset");
+                            
+                        }
+                        for (index = 0; index < changedRadio.length; index++) {
+                            $(changedRadio[index]).prop("checked",false);
+                        }
+                    }
+                    $(window).scrollTop(0);
+                    $(".result").text("Kết quả:");
+                    //- $(".btn-submit").removeAttr("disabled");
+                });             
+            }); 
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js")
+        script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js")
+        
+    body
+        nav(class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top")
+            div(class="container d-flex")
+                a(class="nav-brand", href="/")
+                    img(src="/sakura.png", alt="", width="50")
+                button(class="navbar-toggler", type="button", data-toggle="collapse", data-target="#navbarResponsive", aria-controls="navbarResponsive", aria-expanded="false", aria-label="Toggle navigation")
+                    span(class="navbar-toggler-icon")
+                div(class="collapse navbar-collapse", id="navbarResponsive")
+                    ul(class="navbar-nav ml-auto")
+                        li(class="nav-item")
+                            div(class="dropdown")
+                                button(class="btn btn-link dropdown-toggle", type="button", data-toggle="dropdown") N1
+                                    span(class="caret")
+                                    ul(class="dropdown-menu")
+                                        li
+                                            a(href="/category/jlptn1/" + '3') Ngữ pháp
+                                        li
+                                            a(href="/category/jlptn1/" + '1') Hán tự
+                                        li
+                                            a(href="/category/jlptn1/" + '2') Từ vựng
+                        li(class="nav-item")
+                            div(class="dropdown")
+                                button(class="btn btn-link dropdown-toggle", type="button", data-toggle="dropdown") N2
+                                    span(class="caret")
+                                        ul(class="dropdown-menu")
+                                            li
+                                                a(href="#") Ngữ pháp
+                                            li
+                                                a(href="#") Hán tự
+                                            li
+                                                a(href="#") Từ vựng
+                        li(class="nav-item")
+                            div(class="dropdown")
+                                button(class="btn btn-link dropdown-toggle", type="button", data-toggle="dropdown") N3
+                                    span(class="caret")
+                                        ul(class="dropdown-menu")
+                                            li
+                                                a(href="#") Ngữ pháp
+                                            li
+                                                a(href="#") Hán tự
+                                            li
+                                                a(href="#") Từ vựng
+                        li(class="nav-item")
+                            div(class="dropdown")
+                                button(class="btn btn-link dropdown-toggle", type="button", data-toggle="dropdown") N4
+                                    span(class="caret")
+                                        ul(class="dropdown-menu")
+                                            li
+                                                a(href="#") Ngữ pháp
+                                            li
+                                                a(href="#") Hán tự
+                                            li
+                                                a(href="#") Từ vựng
+                        li(class="nav-item")
+                            div(class="dropdown")
+                                button(class="btn btn-link dropdown-toggle", type="button", data-toggle="dropdown") N5
+                                    span(class="caret")
+                                        ul(class="dropdown-menu")
+                                            li
+                                                a(href="#") Ngữ pháp
+                                            li
+                                                a(href="#") Hán tự
+                                            li
+                                                a(href="#") Từ vựng
+        block content
+        footer(class="py-5 bg-dark", style="position: fixed;width: 100%;bottom: 0;")
+            .container
+                p.m-0.text-center.text-white Copyright &copy; NihongoBlog 2020

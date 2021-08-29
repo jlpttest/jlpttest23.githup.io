@@ -1,0 +1,71 @@
+extends ../../layout/commonlayout
+
+block  content
+    div(class="container container-content")  
+        div(class="content entry")
+            h2(class="title") Welcome to JLPT Test
+            h2(class="level")= 'JLPT ' + data.de1[0].TopicKindTitle + ' ' + data.de1[0].Description
+            table(class="table table-striped table-test")
+                thead
+                    tr
+                        th Đề thi
+                tbody
+                    - var n = 1;
+                    each val in data 
+                        tr
+                            th 
+                                a(href="/category/jlptn" + levelID + "/"+ categoryId + '/test/' + n++)= 'JLPT Test : ' + val[0].TopicTitle  
+        div(class="menu-link")
+            table(class="table table-link")
+                thead
+                    tr
+                        th Menu
+                tbody
+                    tr
+                        th 
+                            a(href="/category/jlptn1/" + '3') JLPT N1 Ngữ pháp
+                    tr
+                        th 
+                            a(href="/category/jlptn1/" + '1') JLPT N1 Hán tự
+                    tr
+                        th 
+                            a(href="/category/jlptn1/" + '2') JLPT N1 Từ vựng
+                    tr
+                        th 
+                            a(href="/category/jlptn2/" + '3') JLPT N2 Ngữ pháp
+                    tr
+                        th 
+                            a(href="/category/jlptn2/" + '1') JLPT N2 Hán tự
+                    tr
+                        th 
+                            a(href="/category/jlptn2/" + '2') JLPT N2 Từ vựng
+                    tr
+                        th 
+                            a(href="/category/jlptn3/" + '3') JLPT N3 Ngữ pháp
+                    tr
+                        th 
+                            a(href="/category/jlptn3/" + '1') JLPT N3 Hán tự
+                    tr
+                        th 
+                            a(href="/category/jlptn3/" + '2') JLPT N3 Từ vựng
+                    tr
+                        th 
+                            a(href="/category/jlptn4/" + '3') JLPT N4 Ngữ pháp
+                    tr
+                        th 
+                            a(href="/category/jlptn4/" + '1') JLPT N4 Hán tự
+                    tr
+                        th 
+                            a(href="/category/jlptn4/" + '2') JLPT N4 Từ vựng
+                    tr
+                        th 
+                            a(href="/category/jlptn5/" + '3') JLPT N5 Ngữ pháp
+                    tr
+                        th 
+                            a(href="/category/jlptn5/" + '1') JLPT N5 Hán tự
+                    tr
+                        th 
+                            a(href="/category/jlptn5/" + '2') JLPT N5 Từ vựng
+            br
+            b Music
+            iframe(src="https://open.spotify.com/embed/playlist/2AhdrxSpw6KCgJVnJTDzTR", width="100%", height="100%", frameBorder="0")
