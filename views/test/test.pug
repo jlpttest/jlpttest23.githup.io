@@ -1,6 +1,16 @@
 extends ../../layout/testlayout
 
 block  content
+    .overlay
+      .spanner
+        .loader
+          .spinner-grow.text-success
+          p しばらくお待ち下さい
+    div(id="mySidenav", class="sidenav bg-dark")
+        a(href="#") Ngữ pháp N1
+        a(href="#") Services
+        a(href="#") Clients
+        a(href="#") Contact
     div(class="container container-content")
         div(class="content entry")
             div(class="header-test")
@@ -39,8 +49,10 @@ block  content
                     tr
                         th Menu
                 tbody
-                    - var n = 1;
+                    - var n = 0;
                     each val in dataTest
-                        tr
-                            th
-                                a(href="/category/jlptn" + levelID + "/"+ categoryId + '/test/' + n++)=val[0].TopicKindTitle + ' ' + val[0].TopicTitle 
+                        - n++;
+                        if val.length
+                            tr
+                                th
+                                    a(href="/category/jlptn" + levelID + "/"+ categoryId + '/test/' + n)=val[0].TopicKindTitle + ' ' + val[0].TopicTitle 

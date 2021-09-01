@@ -152,9 +152,12 @@ module.exports.n1Test = function(req, res){
     //console.log(arrayDe);
     var dataTestObjetc = arrayDe[0];
     //console.log(dataTestObjetc);
-    var arrayTest = dataTestObjetc[key]
+    var arrayTest = dataTestObjetc[key];
+    var arrayTestFilter = arrayTest.filter((test)=>{
+        return test.CorrectAnswer !== null;
+    });
     //console.log(arrayTest);
-    res.render('test/test', {data:arrayTest, dataTest:dataTestObjetc, categoryId:categoryid, levelID:1});
+    res.render('test/test', {data:arrayTestFilter, dataTest:dataTestObjetc, categoryId:categoryid, levelID:1});
 };
 //=======================================================
 // N2 Test
@@ -183,9 +186,12 @@ module.exports.n2Test = function(req, res){
     //console.log(arrayDe);
     var dataTestObjetc = arrayDe[0];
     //console.log(dataTestObjetc);
-    var arrayTest = dataTestObjetc[key]
+    var arrayTest = dataTestObjetc[key];
+    var arrayTestFilter = arrayTest.filter((test)=>{
+        return test.CorrectAnswer !== null;
+    });
     //console.log(arrayTest);
-    res.render('test/test', {data:arrayTest, dataTest:dataTestObjetc, categoryId:categoryid, levelID:2});
+    res.render('test/test', {data:arrayTestFilter, dataTest:dataTestObjetc, categoryId:categoryid, levelID:2});
 };
 //=======================================================
 // N3 Test
@@ -214,9 +220,12 @@ module.exports.n3Test = function(req, res){
     //console.log(arrayDe);
     var dataTestObjetc = arrayDe[0];
     //console.log(dataTestObjetc);
-    var arrayTest = dataTestObjetc[key]
-    //console.log(arrayTest);
-    res.render('test/test', {data:arrayTest, dataTest:dataTestObjetc, categoryId:categoryid, levelID:3});
+    var arrayTest = dataTestObjetc[key];
+    var arrayTestFilter = arrayTest.filter((test)=>{
+        return test.CorrectAnswer !== null;
+    });
+    // console.log(arrayTest);
+    res.render('test/test', {data:arrayTestFilter, dataTest:dataTestObjetc, categoryId:categoryid, levelID:3});
 };
 //=======================================================
 // N4 Test
@@ -245,9 +254,12 @@ module.exports.n4Test = function(req, res){
     //console.log(arrayDe);
     var dataTestObjetc = arrayDe[0];
     //console.log(dataTestObjetc);
-    var arrayTest = dataTestObjetc[key]
+    var arrayTest = dataTestObjetc[key];
+    var arrayTestFilter = arrayTest.filter((test)=>{
+        return test.CorrectAnswer !== null;
+    });
     //console.log(arrayTest);
-    res.render('test/test', {data:arrayTest, dataTest:dataTestObjetc, categoryId:categoryid, levelID:4});
+    res.render('test/test', {data:arrayTestFilter, dataTest:dataTestObjetc, categoryId:categoryid, levelID:4});
 };
 //=======================================================
 // N4 Test
@@ -276,7 +288,10 @@ module.exports.n5Test = function(req, res){
     //console.log(arrayDe);
     var dataTestObjetc = arrayDe[0];
     //console.log(dataTestObjetc);
-    var arrayTest = dataTestObjetc[key]
+    var arrayTest = dataTestObjetc[key];
+    var arrayTestFilter = arrayTest.filter((test)=>{
+        return test.CorrectAnswer !== null;
+    });
     //console.log(arrayTest);
-    res.render('test/test', {data:arrayTest, dataTest:dataTestObjetc, categoryId:categoryid, levelID:5});
+    res.render('test/test', {data:arrayTestFilter, dataTest:dataTestObjetc, categoryId:categoryid, levelID:5});
 };

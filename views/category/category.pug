@@ -1,6 +1,11 @@
 extends ../../layout/commonlayout
 
 block  content
+    .overlay
+      .spanner
+        .loader
+          .spinner-grow.text-success
+          p しばらくお待ち下さい
     div(class="container container-content")  
         div(class="content entry")
             h2(class="title") Welcome to JLPT Test
@@ -10,11 +15,13 @@ block  content
                     tr
                         th Đề thi
                 tbody
-                    - var n = 1;
-                    each val in data 
-                        tr
-                            th 
-                                a(href="/category/jlptn" + levelID + "/"+ categoryId + '/test/' + n++)= 'JLPT Test : ' + val[0].TopicTitle  
+                    - var n = 0;
+                    each val in data
+                        - n++;
+                        if val.length 
+                            tr
+                                th 
+                                    a(href="/category/jlptn" + levelID + "/"+ categoryId + '/test/' + n)= 'JLPT Test : ' + val[0].TopicTitle  
         div(class="menu-link")
             table(class="table table-link")
                 thead

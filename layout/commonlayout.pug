@@ -2,10 +2,13 @@ html
     head 
         title Blog
         meta(charset='utf-8')
+        meta(name="viewport",content="width=device-width, initial-scale=1")
         link(href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css", rel="stylesheet")
         link(href="/common.css", rel="stylesheet")
         link(rel="icon", href="/favi.ico", type="image/gif", sizes="16x16")
         script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js")
+        script(src="https://code.jquery.com/jquery-migrate-1.4.1.min.js")
+        script(src="/common.js")
         script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js")
         script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js")
         
@@ -14,66 +17,24 @@ html
             div(class="container d-flex")
                 a(class="nav-brand", href="/")
                     img(src="/sakura.png", alt="", width="50")
-                button(class="navbar-toggler", type="button", data-toggle="collapse", data-target="#navbarResponsive", aria-controls="navbarResponsive", aria-expanded="false", aria-label="Toggle navigation")
-                    span(class="navbar-toggler-icon")
-                div(class="collapse navbar-collapse", id="navbarResponsive")
-                    ul(class="navbar-nav ml-auto")
-                        li(class="nav-item")
-                            div(class="dropdown")
-                                button(class="btn btn-link dropdown-toggle", type="button", data-toggle="dropdown") N1
-                                    span(class="caret")
-                                    ul(class="dropdown-menu")
-                                        li
-                                            a(href="/category/jlptn1/" + '3') Ngữ pháp
-                                        li
-                                            a(href="/category/jlptn1/" + '1') Hán tự
-                                        li
-                                            a(href="/category/jlptn1/" + '2') Từ vựng
-                        li(class="nav-item")
-                            div(class="dropdown")
-                                button(class="btn btn-link dropdown-toggle", type="button", data-toggle="dropdown") N2
-                                    span(class="caret")
-                                        ul(class="dropdown-menu")
-                                            li
-                                                a(href="#") Ngữ pháp
-                                            li
-                                                a(href="#") Hán tự
-                                            li
-                                                a(href="#") Từ vựng
-                        li(class="nav-item")
-                            div(class="dropdown")
-                                button(class="btn btn-link dropdown-toggle", type="button", data-toggle="dropdown") N3
-                                    span(class="caret")
-                                        ul(class="dropdown-menu")
-                                            li
-                                                a(href="#") Ngữ pháp
-                                            li
-                                                a(href="#") Hán tự
-                                            li
-                                                a(href="#") Từ vựng
-                        li(class="nav-item")
-                            div(class="dropdown")
-                                button(class="btn btn-link dropdown-toggle", type="button", data-toggle="dropdown") N4
-                                    span(class="caret")
-                                        ul(class="dropdown-menu")
-                                            li
-                                                a(href="#") Ngữ pháp
-                                            li
-                                                a(href="#") Hán tự
-                                            li
-                                                a(href="#") Từ vựng
-                        li(class="nav-item")
-                            div(class="dropdown")
-                                button(class="btn btn-link dropdown-toggle", type="button", data-toggle="dropdown") N5
-                                    span(class="caret")
-                                        ul(class="dropdown-menu")
-                                            li
-                                                a(href="#") Ngữ pháp
-                                            li
-                                                a(href="#") Hán tự
-                                            li
-                                                a(href="#") Từ vựng
+                span(class="navbar-toggler-icon menu-nav", style="font-size:30px;cursor:pointer")
+        div(id="mySidenav", class="sidenav bg-dark")
+            a(href="/category/jlptn1/3") Ngữ pháp N1
+            a(href="/category/jlptn2/3") Ngữ pháp N2
+            a(href="/category/jlptn3/3") Ngữ pháp N3
+            a(href="/category/jlptn4/3") Ngữ pháp N4
+            a(href="/category/jlptn5/3") Ngữ pháp N5
+            a(href="/category/jlptn1/1") Hán tự N1
+            a(href="/category/jlptn2/1") Hán tự N2
+            a(href="/category/jlptn3/1") Hán tự N3
+            a(href="/category/jlptn4/1") Hán tự N4
+            a(href="/category/jlptn5/1") Hán tự N5
+            a(href="/category/jlptn1/2") Từ vựng N1
+            a(href="/category/jlptn2/2") Từ vựng N2
+            a(href="/category/jlptn3/2") Từ vựng N3
+            a(href="/category/jlptn4/2") Từ vựng N4
+            a(href="/category/jlptn5/2") Từ vựng N5
         block content
-        footer(class="py-5 bg-dark", style="position: fixed;width: 100%;bottom: 0;")
+        footer(class="py-3 bg-dark", style="position: fixed;width: 100%;bottom: 0;")
             .container
                 p.m-0.text-center.text-white Copyright &copy; NihongoBlog 2020
