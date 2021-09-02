@@ -15,6 +15,8 @@ module.exports.n1SearchCategory = function(req, res){
     }else if(id == 3){
         var grama = category[2];
         arrayDe = grama.nguphap;
+    }else{
+        res.render('error/error');
     }
     //console.log('Data');
     //console.log(arrayDe[0]);
@@ -40,6 +42,8 @@ module.exports.n2SearchCategory = function(req, res){
     }else if(id == 3){
         var grama = category[2];
         arrayDe = grama.nguphap;
+    }else{
+        res.render('error/error');
     }
     //console.log('Data');
     //console.log(arrayDe[0]);
@@ -65,6 +69,8 @@ module.exports.n3SearchCategory = function(req, res){
     }else if(id == 3){
         var grama = category[2];
         arrayDe = grama.nguphap;
+    }else{
+        res.render('error/error');
     }
     //console.log('Data');
     //console.log(arrayDe[0]);
@@ -90,6 +96,8 @@ module.exports.n4SearchCategory = function(req, res){
     }else if(id == 3){
         var grama = category[2];
         arrayDe = grama.nguphap;
+    }else{
+        res.render('error/error');
     }
     //console.log('Data');
     //console.log(arrayDe[0]);
@@ -115,6 +123,8 @@ module.exports.n5SearchCategory = function(req, res){
     }else if(id == 3){
         var grama = category[2];
         arrayDe = grama.nguphap;
+    }else{
+        res.render('error/error');
     }
     //console.log('Data');
     //console.log(arrayDe[0]);
@@ -146,12 +156,17 @@ module.exports.n1Test = function(req, res){
             arrayDe = grama.nguphap;
             break;
         default:
+            res.render('error/error');
             //console.log("Controller n1Test: Error " + categoryid)
     }
     var key = "de" + testid;
     //console.log(arrayDe);
     var dataTestObjetc = arrayDe[0];
     //console.log(dataTestObjetc);
+    const hasKey = dataTestObjetc.hasOwnProperty(key);
+    if(!hasKey){
+        res.render('error/error');
+    }
     var arrayTest = dataTestObjetc[key];
     var arrayTestFilter = arrayTest.filter((test)=>{
         return test.CorrectAnswer !== null;
@@ -180,11 +195,16 @@ module.exports.n2Test = function(req, res){
             arrayDe = grama.nguphap;
             break;
         default:
+            res.render('error/error');
             //console.log("Controller n2Test: Error " + categoryid)
     }
     var key = "de" + testid;
     //console.log(arrayDe);
     var dataTestObjetc = arrayDe[0];
+    const hasKey = dataTestObjetc.hasOwnProperty(key);
+    if(!hasKey){
+        res.render('error/error');
+    }
     //console.log(dataTestObjetc);
     var arrayTest = dataTestObjetc[key];
     var arrayTestFilter = arrayTest.filter((test)=>{
@@ -214,12 +234,17 @@ module.exports.n3Test = function(req, res){
             arrayDe = grama.nguphap;
             break;
         default:
+            res.render('error/error');
             //console.log("Controller n3Test: Error " + categoryid)
     }
     var key = "de" + testid;
     //console.log(arrayDe);
     var dataTestObjetc = arrayDe[0];
     //console.log(dataTestObjetc);
+    const hasKey = dataTestObjetc.hasOwnProperty(key);
+    if(!hasKey){
+        res.render('error/error');
+    }
     var arrayTest = dataTestObjetc[key];
     var arrayTestFilter = arrayTest.filter((test)=>{
         return test.CorrectAnswer !== null;
@@ -248,12 +273,17 @@ module.exports.n4Test = function(req, res){
             arrayDe = grama.nguphap;
             break;
         default:
+            res.render('error/error');
             //console.log("Controller n4Test: Error " + categoryid)
     }
     var key = "de" + testid;
     //console.log(arrayDe);
     var dataTestObjetc = arrayDe[0];
     //console.log(dataTestObjetc);
+    const hasKey = dataTestObjetc.hasOwnProperty(key);
+    if(!hasKey){
+        res.render('error/error');
+    }
     var arrayTest = dataTestObjetc[key];
     var arrayTestFilter = arrayTest.filter((test)=>{
         return test.CorrectAnswer !== null;
@@ -282,16 +312,20 @@ module.exports.n5Test = function(req, res){
             arrayDe = grama.nguphap;
             break;
         default:
+            res.render('error/error');
             //console.log("Controller n5Test: Error " + categoryid)
     }
     var key = "de" + testid;
     //console.log(arrayDe);
     var dataTestObjetc = arrayDe[0];
     //console.log(dataTestObjetc);
+    const hasKey = dataTestObjetc.hasOwnProperty(key);
+    if(!hasKey){
+        res.render('error/error');
+    }
     var arrayTest = dataTestObjetc[key];
     var arrayTestFilter = arrayTest.filter((test)=>{
         return test.CorrectAnswer !== null;
     });
-    //console.log(arrayTest);
     res.render('test/test', {data:arrayTestFilter, dataTest:dataTestObjetc, categoryId:categoryid, levelID:5});
 };
