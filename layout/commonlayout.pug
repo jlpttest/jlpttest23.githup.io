@@ -13,11 +13,19 @@ html
         script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js")
         
     body
-        nav(class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top")
-            div(class="container d-flex")
-                a(class="nav-brand", href="/")
-                    img(src="/sakura.png", alt="", width="50")
-                span(class="navbar-toggler-icon menu-nav", style="font-size:30px;cursor:pointer")
+        nav
+          .nav-bg
+          ul
+            li
+              a.link-text(href='/') Home
+            li
+              a.link-text(href='') Linh tinh
+            li.link-text
+              a.link-text(href='') Chia sẻ
+            li.link-text
+              a.link-text(href='') About me
+        .hero
+        //-   h1 幸せというものはどういうものなのか
         div(id="mySidenav", class="sidenav bg-dark")
             a(href="/category/jlptn1/3") Ngữ pháp N1
             a(href="/category/jlptn2/3") Ngữ pháp N2

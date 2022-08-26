@@ -1,12 +1,12 @@
 extends ../../layout/commonlayout
 
 block  content
-    .overlay
-      .spanner
-        .loader
-          .spinner-grow.text-success
-          p しばらくお待ち下さい
-    div(class="container container-content")  
+    //- .overlay
+    //-   .spanner
+    //-     .loader
+    //-       .spinner-grow.text-success
+    //-       p しばらくお待ち下さい
+    div(class="container container-content content-wrapper")  
         div(class="content entry")
             h2(class="title") Welcome to JLPT Test
             h2(class="level")= 'JLPT ' + data.de1[0].TopicKindTitle + ' ' + data.de1[0].Description
@@ -75,4 +75,3 @@ block  content
                             a(href="/category/jlptn5/" + '2') JLPT N5 Từ vựng
             br
             b Music
-            iframe(src="https://open.spotify.com/embed/playlist/2AhdrxSpw6KCgJVnJTDzTR", width="100%", height="100%", frameBorder="0")

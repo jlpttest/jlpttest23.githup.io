@@ -24,6 +24,6 @@ app.use('/user', router);
 app.use('/category', routerCategory);
 
 app.listen(port, () => {
-  //console.log(`Example app listening at http://localhost:${port}`)
+  console.log(`Example app listening at http://localhost:${port}`)
 });
 

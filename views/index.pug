@@ -1,17 +1,7 @@
 extends ../layout/commonlayout
 
 block  content
-  //- a(href='/user/create') New 
-  //- form(action="/user/search", method="GET") 
-  //-   input(type="text" name="q" value=qResult)
-  //-   button Search
-  //- ul
-  //-   each val in user
-  //-     li
-  //-       span=val.name
-  //-       span &nbsp;
-  //-       a(href='/user/' + val.id) View
-  div(class="container container-content")  
+  div(class="container container-content content-wrapper")
     div(class="content entry")
       h2(class="title") Welcome to JLPT Test
       h2(class="level") JLPT N1
@@ -152,6 +142,5 @@ block  content
               a(href="#") JLPT N5 Từ vựng
       br
       b Music
-      iframe(src="https://open.spotify.com/embed/playlist/2AhdrxSpw6KCgJVnJTDzTR", width="100%", height="100%", frameBorder="0")
 
 
