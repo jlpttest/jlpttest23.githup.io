@@ -16,12 +16,22 @@ app.use(express.static('public'));
 app.use(express.static(path.join(__dirname, 'public', 'images')));
 app.use(express.static(path.join(__dirname, 'public', 'js')));
 app.use(express.static(path.join(__dirname, 'public', 'css')));
+
 app.get('/', (req, res) => {
   res.render('index');
 });
 
+app.get('/aboutme', (req, res) => {
+  res.render('aboutme');
+});
+
+app.get('/mylife', (req, res) => {
+  res.render('mylife');
+});
+
 app.use('/user', router);
 app.use('/category', routerCategory);
+
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
